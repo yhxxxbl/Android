@@ -1,0 +1,49 @@
+/*
+ * Copyright (C) 2018 Facishare Technology Co., Ltd. All Rights Reserved.
+ */
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "fs.facishare.com.myapplication"
+        minSdkVersion 26
+        targetSdkVersion rootProject.ext.minSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // material design 设计包
+    implementation "com.android.support:design:$rootProject.materialDesignVersion"
+    // recycler view控件
+    implementation "com.android.support:recyclerview-v7:$rootProject.materialDesignVersion"
+    // preference screen 设置和关于页面的配置
+    implementation "com.android.support:preference-v14:$rootProject.materialDesignVersion"
+    // 支持Chrome Custom Tabs
+    implementation "com.android.support:customtabs:$rootProject.materialDesignVersion"
+    // card view 控件
+    implementation "com.android.support:cardview-v7:$rootProject.materialDesignVersion"
+
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+}
+
